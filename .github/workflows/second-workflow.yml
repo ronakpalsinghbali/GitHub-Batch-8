@@ -26,10 +26,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Second script 
-        run: This is from VS code
+        run: echo This is from VS code
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          This is a multi-line script of JOB-2, from
-          VS code.
+          echo This is a multi-line script of JOB-2, from
+          echo VS code.
