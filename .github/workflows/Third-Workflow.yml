@@ -1,12 +1,12 @@
 # This workflow is with environment variables and secretsname: Second workflow with manual trigger
-
+name: Third Workflow
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   
   workflow_dispatch:
 
-enviornment:
+env:
   AWS_ACCESS_KEY: ASIAXWDRTCCOLWBXFAFZ
   AWS_SECRET_KEY: 8q/eYcfoAVnyL16nhE7puNpmyMRRHS1RJMyEneSU
   AWS_REGION: us-east-1
@@ -32,9 +32,9 @@ jobs:
       - name: Configure AWS credentials
         uses : aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{environment.AWS_ACCESS_KEY}}
-          aws-secret-access-key: ${{environment.AWS_SECRET_KEY}}
-          aws-region: ${{environment.AWS_REGION}}
+          aws-access-key-id: ${{env.AWS_ACCESS_KEY}}
+          aws-secret-access-key: ${{env.AWS_SECRET_KEY}}
+          aws-region: ${{env.AWS_REGION}}
       
       - name: To print environment values
-        run : echo ${{environment.GitHub_session}}
+        run : echo ${{env.GitHub_session}}
